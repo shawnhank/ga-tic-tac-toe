@@ -19,28 +19,67 @@
 
 //7) Create Reset functionality.
 
-
 /*-------------------------------- Constants --------------------------------*/
+const players = {
+  '1': 'X',
+  '-1': 'O',
+};
+console.log(players);
+/*---------------------------- Variables (state) ----------------------------*/
 let board;
 let turn;
 let winner;
 let tie;
 
 
-
-/*---------------------------- Variables (state) ----------------------------*/
-
-
-
 /*------------------------ Cached Element References ------------------------*/
-const squareEls = document.querySelectorAll(#);
-
-
-/*-------------------------------- Functions --------------------------------*/
-
-
+//squareEls stores the state of all nine boxes by css class '.sqr'
+const squareEls = document.querySelectorAll('.sqr');
+console.log(squareEls);
+//messageEl stores the state of the players turn. only h2 tag in html
+const messageEl = document.querySelector('h2');
+console.log(messageEl);
 
 /*----------------------------- Event Listeners -----------------------------*/
 
+
+
+
+/*-------------------------------- Functions --------------------------------*/
+init();
+// setting up the board... all nine squares
+function init() {
+  // The nine elements in the board array will correspond to a square on the board.
+  // board[0] is the top left square and each index position moves from left to right
+  // starting at board[0] and ending at board[9] at the 3rd row last square.
+  board = [null, null, null, null, null, null, null, null,  null];
+  // winner indicates either player 1 (1) or player 2 (-1)
+  winner = null;
+  // turn indicates the turn of player 1 or player 2
+  turn = 1;
+  //logging 
+  console.log(init);
+  render();
+}
+
+// The purpose of the render() function is to 
+// "transfer" visualize ALL state to/in the DOM
+function render() {
+  renderBoard();
+  renderMessage();
+  renderControls();
+}
+
+function renderBoard() {
+
+}
+
+function renderMessage() {
+
+}
+
+function renderControls() {
+
+}
 
 
