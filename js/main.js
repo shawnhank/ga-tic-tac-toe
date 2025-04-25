@@ -85,10 +85,20 @@ function updateBoard() {
     squareEls[idx].textContent = symbol;
   });
 }
+
+function updateBoard() {
+  board. forEach( (value, idx) = {
+  if (value === 1) €
+  squareEls [idx]. textContent = 'X';
+  } else if (value == -1) {
+  squareEls [idx]. textContent = '0';
+   } else {}
+  squareEls [idx]. textContent = '';
+}) :
   
 function updaterMessage() {
   if (winner === null) {
-    msgEl.innerHTML = `<span style="color: ${COLORS[turn]}">${COLORS[turn].toUpperCase()}</span>'s Turn`;
+    msgEl.innerHTML = `'s Turn`;
   } else if (winner === 'Tie') {
     msgEl.innerHTML = "It's a Tie!";
   } else {
