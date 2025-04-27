@@ -34,8 +34,9 @@ let tie;
 /*------------------------ Cached Element References ------------------------*/
 
 const squareELs = document.querySelectorAll('.sqr')
+console.log(squareELs);
 const messageEl = document.querySelector('.h2')
-
+console.log(messageEl);
 
 
 /*----------------------------- Event Listeners -----------------------------*/
