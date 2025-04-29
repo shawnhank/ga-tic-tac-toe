@@ -1,20 +1,20 @@
-/* tictactoe css/main.css */
+/* Tic-Tac-Toe CSS (updated April 29, 2025) */
 
 :root {
-  --tile-size: min(4.5vmin, 4.5vw);
-  --tile-gap: 0.4vmin;
+  --tile-gap: 1.2vmin;
+  --tile-size: min(80vmin, 260px);
 }
 
 body {
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   height: auto;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
   font-family: sans-serif;
   background-color: #333;
   color: #e1dedebb;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23514f4f' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23514f4f' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 #app {
@@ -28,13 +28,14 @@ body {
   box-sizing: border-box;
 }
 
+/* Title */
+
 #game-title-container {
   text-align: center;
   margin-top: 2.5vh;
-  margin-bottom: 4vh;
+  margin-bottom: 3vh;
   padding-bottom: 0.5em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.08);
 }
 
 #game-title-container h1 {
@@ -44,8 +45,19 @@ body {
   margin: 0;
 }
 
+/* Message */
+
+#message-container {
+  text-align: center;
+  margin-bottom: 2vh;
+  color: #d6d6d6;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Gameplay container */
+
 #game-container {
-  background-color: #ccc;
+  background-color: #555;
   padding: 2vh 2vw;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
@@ -53,9 +65,13 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2vh;
-  width: 100%;
+  width: calc(min(100vmin, 480px));
+  max-width: 120vmin;                  
+  margin: 0 auto;
   box-sizing: border-box;
 }
+
+/* Board section */
 
 #game-board-wrapper {
   width: 100%;
@@ -63,38 +79,61 @@ body {
   justify-content: center;
 }
 
-#message-container {
-  text-align: center;
-  margin-bottom: 2vh;
-  color: #555;
-  /* text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); */
-}
-.board {
+
+/* Game squares */
+#squares-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: min(2vmin, 10px);
-  width: min(90vmin, 300px);
-  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  /* gap: .5vmin; */
+  background-color: transparent;
+  padding: 1vmin;
+  border-radius: 0;
+  margin: 0 auto;
 }
 
+/* .squares {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2vmin;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 0.6vmin;              
+} */
+
 .sqr {
-  width: 100%;
+  width: min(24vmin, 120px); 
   aspect-ratio: 1 / 1;
-  font-size: min(8vmin, 3rem);
+  font-size: min(10vmin, 3rem);
+  padding: 1vmin;
+  background-color: transparent;   /* ✅ no fill */
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #777;
-  border: 4px solid #2c2c2c;
+  font-size: min(10vmin, 3rem);
   color: white;
   cursor: pointer;
-  box-sizing: border-box;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  display: flex;
   transition: background-color 0.2s ease;
 }
 
-.sqr:hover {
-  background-color: #666;
+/* Remove right border on last column */
+.sqr:nth-child(3n) {
+  border-right: none;
 }
+
+/* Remove bottom border on last row */
+.sqr:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+   
+.sqr:hover {
+  background-color: #888;
+}
+
+/* Reset Button */
 
 #reset-button-container {
   margin-top: 3vh;
@@ -108,7 +147,7 @@ body {
   text-decoration: none;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   font: inherit;
   margin: 0 auto;
@@ -118,16 +157,19 @@ body {
   background-color: #444;
 }
 
+/* Back to Home */
+
 #back-to-home-container {
   margin: 6vh auto;
   text-align: center;
-  width: 90%;
-  max-width: 500px;
+  width: min(90vmin, 90%);
 }
 
 #back-to-home-container button {
   margin: 0 auto;
 }
+
+/* GA Logo */
 
 #ga-logo-container {
   position: fixed;
