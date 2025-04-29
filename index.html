@@ -8,20 +8,50 @@
   <title>Tic-Tac-Toe</title>
 </head>
 <body>
-  <h1>Tic-Tac-Toe</h1>
-  <h2 id="message">Message</h2>
+  <div id="app">
 
-  <section class="board">
-    <div class="sqr" id="0"></div>
-    <div class="sqr" id="1"></div>
-    <div class="sqr" id="2"></div>
-    <div class="sqr" id="3"></div>
-    <div class="sqr" id="4"></div>
-    <div class="sqr" id="5"></div>
-    <div class="sqr" id="6"></div>
-    <div class="sqr" id="7"></div>
-    <div class="sqr" id="8"></div>
-  </section>
-  <button id="reset">Reset</button>
+    <div id="game-title-container">
+      <h1>Tic Tac Toe</h1>
+    </div>
+
+    <div id="game-container">
+      
+      <div id="message-container">
+        <h2 id="message">Message</h2>
+      </div>
+
+      <div id="game-board-wrapper">
+        <div id="board">
+          <section class="board">
+            <div class="sqr" id="0"></div>
+            <div class="sqr" id="1"></div>
+            <div class="sqr" id="2"></div>
+            <div class="sqr" id="3"></div>
+            <div class="sqr" id="4"></div>
+            <div class="sqr" id="5"></div>
+            <div class="sqr" id="6"></div>
+            <div class="sqr" id="7"></div>
+            <div class="sqr" id="8"></div>
+          </section>
+          </div>
+      </div>
+
+      <div id="reset-button-container">
+        <button id="reset" class="button">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="back-to-home-container">
+    <button class="button" onclick="window.location.href='../landing/index.html'">
+      Back to Home
+    </button>
+  </div>
+
+  <div id="ga-logo-container">
+    <a href="https://generalassemb.ly/students/courses/software-engineering-bootcamp" target="_blank" aria-label="GA Bootcamp">
+      <img id="ga-logo" src="images/ga-logo.png" alt="General Assembly Logo" />
+    </a>
+  </div>
 </body>
 </html>
